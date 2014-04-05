@@ -8,8 +8,9 @@
   <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
   <exclude name="PSR1.Files.SideEffects"/>
   <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
+  <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps" />
  </rule>
- 
+
  <!-- add-ons -->
  <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed">
   <type>error</type>
@@ -23,7 +24,7 @@
  </rule>
  <rule ref="Generic.Metrics.NestingLevel"/>
  <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
- 
+
  <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
  <rule ref="Squiz.Classes.LowercaseClassKeywords"/>
  <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
