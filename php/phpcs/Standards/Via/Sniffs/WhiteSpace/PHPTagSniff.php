@@ -1,6 +1,6 @@
 <?php
 /**
- * Via_Sniffs_WhiteSpace_OpenTagSniff.
+ * Via_Sniffs_WhiteSpace_PHPTagSniff.
  *
  * PHP version 5
  *
@@ -13,7 +13,7 @@
  */
 
 /**
- * Via_Sniffs_WhiteSpace_OpenTagSniff.
+ * Via_Sniffs_WhiteSpace_PHPTagSniff.
  *
  * Ensure there's no white space before the PHP open tag when on its own line.
  *
@@ -25,7 +25,7 @@
  * @version   Release: 1.5.2
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class Via_Sniffs_WhiteSpace_OpenTagSniff implements PHP_CodeSniffer_Sniff {
+class Via_Sniffs_WhiteSpace_PHPTagSniff implements PHP_CodeSniffer_Sniff {
     /**
      * Returns an array of tokens this test wants to listen for.
      *
