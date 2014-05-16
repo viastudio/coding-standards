@@ -21,6 +21,12 @@
    <property name="absoluteComplexity" value="99"/>
   </properties>
  </rule>
+ <rule ref="Generic.WhiteSpace.ScopeIndent">
+  <properties>
+   <property name="ignoreIndentationTokens" type="array" value="T_CLOSE_TAG,T_OPEN_TAG"/>
+   <property name="exact" value="true"/>
+  </properties>
+ </rule>  
  <rule ref="Generic.Metrics.NestingLevel"/>
  <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
  
