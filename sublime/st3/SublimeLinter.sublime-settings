@@ -1,0 +1,25 @@
+{
+    "user": {
+        "linters": {
+            "jshint": {
+                "@disable": false,
+                "args": [],
+                "excludes": [
+                    "*.min.js"
+                ]
+            },
+            "php": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "phpcs": {
+                "@disable": false,
+                "args": [],
+                "excludes": [],
+                "standard": "Via"
+            }
+        },
+        "show_errors_on_save": false,
+    }
+}
