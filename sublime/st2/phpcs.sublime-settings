@@ -1,0 +1,7 @@
+{
+	"phpcs_additional_args": {
+	    "--standard": "Via",
+	    "-n": ""
+	},
+	"phpcs_show_errors_on_save": false
+}
