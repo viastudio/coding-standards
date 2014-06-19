@@ -15,7 +15,10 @@
             },
             "phpcs": {
                 "@disable": false,
-                "args": [],
+                "args": [
+                    "-ns",
+                    "--report=full"
+                ],
                 "excludes": [],
                 "standard": "Via"
             }
