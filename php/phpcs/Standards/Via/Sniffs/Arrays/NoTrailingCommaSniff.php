@@ -6,11 +6,10 @@
  *
  * @category  PHP
  * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @author    Jason McCreary <jmac@viastudio.com>
  * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
  * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
+ * @link      https://github.com/viastudio/coding-standards
  */
 
 /**
@@ -18,12 +17,11 @@
  *
  * @category  PHP
  * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @author    Jason McCreary <jmac@viastudio.com>
  * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
  * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
  * @version   Release: 1.5.2
- * @link      http://pear.php.net/package/PHP_CodeSniffer
+ * @link      https://github.com/viastudio/coding-standards
  */
 class Via_Sniffs_Arrays_NoTrailingCommaSniff implements PHP_CodeSniffer_Sniff {
     /**
@@ -50,7 +48,7 @@ class Via_Sniffs_Arrays_NoTrailingCommaSniff implements PHP_CodeSniffer_Sniff {
 
         if ($tokens[$previous]['code'] === T_COMMA) {
             $error = 'Comma not allowed after last value in array declaration';
-            $phpcsFile->addError($error, $previous, 'NoTrailingComma');
+            $phpcsFile->addError($error, $previous, 'NotAllowed');
         }
     }
 }
