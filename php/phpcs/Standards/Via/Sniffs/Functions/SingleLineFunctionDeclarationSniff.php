@@ -1,14 +1,10 @@
 <?php
 /**
- * Squiz_Sniffs_Functions_MultiLineFunctionDeclarationSniff.
+ * Via_Sniffs_Functions_SingleLineFunctionDeclarationSniff.
  *
  * PHP version 5
  *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @author    Jason McCreary <jmac@viastudio.com>
  * @link      https://github.com/viastudio/coding-standards
  */
 
@@ -18,23 +14,16 @@ if (class_exists('PEAR_Sniffs_Functions_FunctionDeclarationSniff', true) === fal
 }
 
 /**
- * Squiz_Sniffs_Functions_MultiLineFunctionDeclarationSniff.
+ * Via_Sniffs_Functions_SingleLineFunctionDeclarationSniff.
  *
- * Ensure single and multi-line function declarations are defined correctly.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: 1.5.2
+ * @author    Jason McCreary <jmac@viastudio.com>
  * @link      https://github.com/viastudio/coding-standards
  */
 class Via_Sniffs_Functions_SingleLineFunctionDeclarationSniff extends PEAR_Sniffs_Functions_FunctionDeclarationSniff {
     /**
      * Processes single-line declarations.
      *
-     * Just uses the Generic KR brace sniff.
+     * Delegates to the Generic KR brace sniff.
      *
      * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
      * @param int                  $stackPtr  The position of the current token

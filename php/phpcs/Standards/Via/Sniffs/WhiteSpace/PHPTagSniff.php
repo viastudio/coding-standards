@@ -1,28 +1,17 @@
 <?php
 /**
- * Via_Sniffs_WhiteSpace_PHPTagSniff.
+ * Ensure there's no white space PHP tags on its own line.
  *
  * PHP version 5
  *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @author    Jason McCreary <jmac@viastudio.com>
  * @link      https://github.com/viastudio/coding-standards
  */
 
 /**
- * Via_Sniffs_WhiteSpace_PHPTagSniff.
+ * Ensure there's no white space PHP tags on its own line.
  *
- * Ensure there's no white space before the PHP open tag when on its own line.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: 1.5.2
+ * @author    Jason McCreary <jmac@viastudio.com>
  * @link      https://github.com/viastudio/coding-standards
  */
 class Via_Sniffs_WhiteSpace_PHPTagSniff implements PHP_CodeSniffer_Sniff {
