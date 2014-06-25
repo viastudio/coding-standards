@@ -9,7 +9,7 @@
  * @author    Greg Sherwood <gsherwood@squiz.net>
  * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
  * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
+ * @link      https://github.com/viastudio/coding-standards
  */
 
 if (class_exists('PEAR_Sniffs_Functions_FunctionDeclarationSniff', true) === false) {
@@ -28,7 +28,7 @@ if (class_exists('PEAR_Sniffs_Functions_FunctionDeclarationSniff', true) === fal
  * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
  * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
  * @version   Release: 1.5.2
- * @link      http://pear.php.net/package/PHP_CodeSniffer
+ * @link      https://github.com/viastudio/coding-standards
  */
 class Via_Sniffs_Functions_SingleLineFunctionDeclarationSniff extends PEAR_Sniffs_Functions_FunctionDeclarationSniff {
     /**
