@@ -4,11 +4,7 @@
  *
  * PHP version 5
  *
- * @category  PHP
- * @package   PHP_CodeSniffer
  * @author    Jason McCreary <jmac@viastudio.com>
- * @copyright 2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
  * @link      https://github.com/viastudio/coding-standards
  */
 
@@ -17,12 +13,7 @@
  *
  * Checks the declaration of the class is correct.
  *
- * @category  PHP
- * @package   PHP_CodeSniffer
  * @author    Jason McCreary <jmac@viastudio.com>
- * @copyright 2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
  * @link      https://github.com/viastudio/coding-standards
  */
 class Via_Sniffs_Classes_ClassDeclarationSniff implements PHP_CodeSniffer_Sniff {
