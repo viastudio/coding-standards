@@ -47,4 +47,33 @@
  <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
  <rule ref="Snap.WhiteSpace.OperatorSpacing"/>
  <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+ 
+ <!-- exclude files -->
+ <exclude-pattern>webroot/wp-admin/</exclude-pattern>
+ <exclude-pattern>webroot/wp-includes/</exclude-pattern>
+ <exclude-pattern>webroot/wp-content/plugins/(?!via-)</exclude-pattern>
+ <exclude-pattern>webroot/wp-activate.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-app.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-blog-header.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-comments-post.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-cron.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-links-opml.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-load.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-login.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-mail.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-settings.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-signup.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-trackback.php</exclude-pattern>
+ <exclude-pattern>webroot/xmlrpc.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-content/index.php</exclude-pattern>
+ <exclude-pattern>webroot/wp-content/themes/index.php</exclude-pattern>
+ <exclude-pattern>cakephp/index.php</exclude-pattern>
+ <exclude-pattern>cakephp/cake/</exclude-pattern>
+ <exclude-pattern>cakephp/vendors/</exclude-pattern>
+ <exclude-pattern>cakephp/app/vendors/</exclude-pattern>
+ <exclude-pattern>cakephp/app/libs/</exclude-pattern>
+ <exclude-pattern>cakephp/app/plugins/</exclude-pattern>
+ <exclude-pattern>cakephp/app/Vendor/</exclude-pattern>
+ <exclude-pattern>cakephp/app/Lib/</exclude-pattern>
+ <exclude-pattern>cakephp/app/Plugin/</exclude-pattern>
 </ruleset>
