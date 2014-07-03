@@ -11,3 +11,5 @@ You can install and configure one or more of the following components.
 - [csslint](css/csslint)
 - [git](git/hooks)
 - [sublime](sublime/)
+
+Noop
