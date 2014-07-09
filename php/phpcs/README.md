@@ -22,3 +22,9 @@ Within this directory are the default standards installed with PHP CodeSniffer. 
 
 	ln -s /path/to/cloned/coding-standards/php/phpcs/Standards/Via Via
 
+# Usage
+
+To run PHP CodeSniffer using our standard, use the following command:
+
+    phpcs -ns --standard=Via path_or_file_to_check
+
