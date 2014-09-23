@@ -49,24 +49,25 @@
  <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
  
  <!-- exclude files -->
- <exclude-pattern>webroot/wp-admin/</exclude-pattern>
- <exclude-pattern>webroot/wp-includes/</exclude-pattern>
- <exclude-pattern>webroot/wp-content/plugins/(?!via-)</exclude-pattern>
- <exclude-pattern>webroot/wp-activate.php</exclude-pattern>
- <exclude-pattern>webroot/wp-app.php</exclude-pattern>
- <exclude-pattern>webroot/wp-blog-header.php</exclude-pattern>
- <exclude-pattern>webroot/wp-comments-post.php</exclude-pattern>
- <exclude-pattern>webroot/wp-cron.php</exclude-pattern>
- <exclude-pattern>webroot/wp-links-opml.php</exclude-pattern>
- <exclude-pattern>webroot/wp-load.php</exclude-pattern>
- <exclude-pattern>webroot/wp-login.php</exclude-pattern>
- <exclude-pattern>webroot/wp-mail.php</exclude-pattern>
- <exclude-pattern>webroot/wp-settings.php</exclude-pattern>
- <exclude-pattern>webroot/wp-signup.php</exclude-pattern>
- <exclude-pattern>webroot/wp-trackback.php</exclude-pattern>
- <exclude-pattern>webroot/xmlrpc.php</exclude-pattern>
- <exclude-pattern>webroot/wp-content/index.php</exclude-pattern>
- <exclude-pattern>webroot/wp-content/themes/index.php</exclude-pattern>
+ <exclude-pattern>*.js</exclude-pattern>
+ <exclude-pattern>*/wp-admin/*</exclude-pattern>
+ <exclude-pattern>*/wp-includes/*</exclude-pattern>
+ <exclude-pattern>*/wp-content/plugins/(?!via-)</exclude-pattern>
+ <exclude-pattern>wp-activate.php</exclude-pattern>
+ <exclude-pattern>wp-app.php</exclude-pattern>
+ <exclude-pattern>wp-blog-header.php</exclude-pattern>
+ <exclude-pattern>wp-comments-post.php</exclude-pattern>
+ <exclude-pattern>wp-cron.php</exclude-pattern>
+ <exclude-pattern>wp-links-opml.php</exclude-pattern>
+ <exclude-pattern>wp-load.php</exclude-pattern>
+ <exclude-pattern>wp-login.php</exclude-pattern>
+ <exclude-pattern>wp-mail.php</exclude-pattern>
+ <exclude-pattern>wp-settings.php</exclude-pattern>
+ <exclude-pattern>wp-signup.php</exclude-pattern>
+ <exclude-pattern>wp-trackback.php</exclude-pattern>
+ <exclude-pattern>xmlrpc.php</exclude-pattern>
+ <exclude-pattern>*/wp-content/index.php</exclude-pattern>
+ <exclude-pattern>*/wp-content/themes/index.php</exclude-pattern>
  <exclude-pattern>cakephp/index.php</exclude-pattern>
  <exclude-pattern>cakephp/cake/</exclude-pattern>
  <exclude-pattern>cakephp/vendors/</exclude-pattern>
