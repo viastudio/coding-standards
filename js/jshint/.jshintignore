@@ -1,1 +1,15 @@
-*.min.js
+**/*.min.js
+**/*.php
+**/wp-admin/**
+**/wp-includes/**
+**/wp-content/plugins/**
+!**/wp-content/plugins/via-**
+**/cakephp/vendors/
+**/cakephp/app/vendors/
+**/cakephp/app/libs/
+**/cakephp/app/plugins/
+**/cakephp/app/Vendor/
+**/cakephp/app/Lib/
+**/cakephp/app/Plugin/
+**/wordpress/plugins/**
+!**/wordpress/plugins/via-**
