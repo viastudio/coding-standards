@@ -53,6 +53,7 @@
  <exclude-pattern>*/wp-admin/*</exclude-pattern>
  <exclude-pattern>*/wp-includes/*</exclude-pattern>
  <exclude-pattern>*/wp-content/plugins/(?!via-)</exclude-pattern>
+ <exclude-pattern>*/wordpress/plugins/(?!via-)</exclude-pattern>
  <exclude-pattern>wp-activate.php</exclude-pattern>
  <exclude-pattern>wp-app.php</exclude-pattern>
  <exclude-pattern>wp-blog-header.php</exclude-pattern>
