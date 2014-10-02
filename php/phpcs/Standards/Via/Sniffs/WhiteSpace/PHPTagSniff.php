@@ -40,7 +40,17 @@ class Via_Sniffs_WhiteSpace_PHPTagSniff implements PHP_CodeSniffer_Sniff {
             return;
         }
 
-        if ($tokens[$stackPtr - 1]['line'] !== $tokens[$stackPtr]['line']) {
+        $tokens_before = isset($tokens[$stackPtr - 1]) && $tokens[$stackPtr - 1]['line'] === $tokens[$stackPtr]['line'];
+        $tokens_after = isset($tokens[$stackPtr + 1]) && $tokens[$stackPtr + 1]['line'] === $tokens[$stackPtr]['line'];
+
+        if ($tokens[$stackPtr]['level'] !== 0 && (($tokens[$stackPtr]['code'] === T_CLOSE_TAG && $tokens_before) || ($tokens[$stackPtr]['code'] === T_OPEN_TAG && $tokens_after))) {
+            $error = 'Can not use inline PHP within indented block';
+            $phpcsFile->addError($error, $stackPtr, 'SameLine', array());
+
+            return;
+        }
+
+        if (!$tokens_before) {
             return;
         }
 
@@ -49,9 +59,11 @@ class Via_Sniffs_WhiteSpace_PHPTagSniff implements PHP_CodeSniffer_Sniff {
 
         if ($tokens[$stackPtr]['code'] === T_CLOSE_TAG) {
             $lastContent = $phpcsFile->findFirstOnLine(T_OPEN_TAG, $stackPtr);
-            if (!$lastContent && $trim_len === 0) {
+
+            if ($lastContent === false && $trim_len === 0) {
                 $error = 'Closing PHP tag must not be indented when on its own line';
                 $phpcsFile->addError($error, $stackPtr, 'CloseTag', array());
+
                 return;
             }
         }
