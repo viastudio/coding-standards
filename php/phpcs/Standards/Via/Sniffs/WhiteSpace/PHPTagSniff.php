@@ -40,24 +40,13 @@ class Via_Sniffs_WhiteSpace_PHPTagSniff implements PHP_CodeSniffer_Sniff {
             return;
         }
 
-        $tokens_before = isset($tokens[$stackPtr - 1]) && $tokens[$stackPtr - 1]['line'] === $tokens[$stackPtr]['line'];
-        $tokens_after = isset($tokens[$stackPtr + 1]) && $tokens[$stackPtr + 1]['line'] === $tokens[$stackPtr]['line'];
-
-        if ($tokens[$stackPtr]['level'] !== 0 && (($tokens[$stackPtr]['code'] === T_CLOSE_TAG && $tokens_before) || ($tokens[$stackPtr]['code'] === T_OPEN_TAG && $tokens_after))) {
-            $error = 'Can not use inline PHP within indented block';
-            $phpcsFile->addError($error, $stackPtr, 'SameLine', array());
-
-            return;
-        }
-
-        if (!$tokens_before) {
-            return;
-        }
-
-        $previous_content = $tokens[$stackPtr - 1]['content'];
-        $trim_len = strlen(trim($previous_content));
+        $trim_len = strlen(trim($tokens[$stackPtr - 1]['content']));
 
         if ($tokens[$stackPtr]['code'] === T_CLOSE_TAG) {
+            if ($tokens[$stackPtr - 1]['line'] !== $tokens[$stackPtr]['line']) {
+                return;
+            }
+
             $lastContent = $phpcsFile->findFirstOnLine(T_OPEN_TAG, $stackPtr);
 
             if ($lastContent === false && $trim_len === 0) {
@@ -66,10 +55,54 @@ class Via_Sniffs_WhiteSpace_PHPTagSniff implements PHP_CodeSniffer_Sniff {
 
                 return;
             }
+        } elseif ($tokens[$stackPtr]['code'] === T_OPEN_TAG) {
+            if ($trim_len === 0 && $tokens[$stackPtr - 1]['line'] === $tokens[$stackPtr]['line']) {
+                $error = 'Opening PHP tag must not be indented when on its own line';
+                $phpcsFile->addError($error, $stackPtr, 'OpenTag', array());
+
+                return;
+            }
+
+            $closeTagPtr = $phpcsFile->findNext(T_CLOSE_TAG, $stackPtr);
+            if ($closeTagPtr !== false && $tokens[$closeTagPtr]['line'] === $tokens[$stackPtr]['line']) {
+                return;
+            }
+
+            if (isset($tokens[$stackPtr + 1]) && $tokens[$stackPtr + 1]['line'] === $tokens[$stackPtr]['line']) {
+                $error = 'Can not have code on same line as PHP open tag';
+                $phpcsFile->addError($error, $stackPtr, 'SameLine', array());
+
+                return;
+            }
+
+            $closeTagPtr = $phpcsFile->findPrevious(T_CLOSE_TAG, $stackPtr);
+            if ($closeTagPtr === false) {
+                return;
+            }
+
+            if ($closeTagPtr === ($stackPtr - 1)) {
+                $error = 'PHP close tag immediately followed by PHP open tag';
+                $phpcsFile->addError($error, $stackPtr, 'Condense', array());
+
+                return;
+            }
         }
-        elseif ($tokens[$stackPtr]['code'] === T_OPEN_TAG && $trim_len === 0) {
-            $error = 'Opening PHP tag must not be indented when on its own line';
-            $phpcsFile->addError($error, $stackPtr, 'OpenTag', array());
+
+        if ($tokens[$stackPtr]['level'] !== 0) {
+            if ($tokens[$stackPtr]['code'] === T_CLOSE_TAG) {
+                $openTagPtr = $phpcsFile->findPrevious(T_OPEN_TAG, $stackPtr);
+
+                if ($openTagPtr === false || $tokens[$openTagPtr]['line'] != $tokens[$stackPtr]['line']) {
+                    return;
+                }
+
+                if (isset($tokens[$openTagPtr - 1]) && $tokens[$openTagPtr - 1]['line'] != $tokens[$openTagPtr]['line']) {
+                    $error = 'Can not use inline PHP within indented block';
+                    $phpcsFile->addError($error, $stackPtr, 'Inline', array());
+
+                    return;
+                }
+            }
         }
     }
 }
