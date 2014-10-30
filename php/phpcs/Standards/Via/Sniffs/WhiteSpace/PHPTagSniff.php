@@ -75,18 +75,6 @@ class Via_Sniffs_WhiteSpace_PHPTagSniff implements PHP_CodeSniffer_Sniff {
 
                 return;
             }
-
-            $closeTagPtr = $phpcsFile->findPrevious(T_CLOSE_TAG, $stackPtr);
-            if ($closeTagPtr === false) {
-                return;
-            }
-
-            if ($closeTagPtr === ($stackPtr - 1)) {
-                $error = 'PHP close tag immediately followed by PHP open tag';
-                $phpcsFile->addError($error, $stackPtr, 'Condense', array());
-
-                return;
-            }
         }
 
         if ($tokens[$stackPtr]['level'] !== 0) {
