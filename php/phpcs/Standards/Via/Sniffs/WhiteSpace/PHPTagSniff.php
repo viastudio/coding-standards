@@ -37,10 +37,11 @@ class Via_Sniffs_WhiteSpace_PHPTagSniff implements PHP_CodeSniffer_Sniff {
         $tokens = $phpcsFile->getTokens();
 
         if ($stackPtr === 0) {
-            return;
+            $trim_len = -1;
+        } else {
+            $trim_len = strlen(trim($tokens[$stackPtr - 1]['content']));
         }
 
-        $trim_len = strlen(trim($tokens[$stackPtr - 1]['content']));
 
         if ($tokens[$stackPtr]['code'] === T_CLOSE_TAG) {
             if ($tokens[$stackPtr - 1]['line'] !== $tokens[$stackPtr]['line']) {
