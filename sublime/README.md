@@ -26,7 +26,7 @@ If you don't have [Package Control](https://sublime.wbond.net/), install it.
 Install the list of ST3 packages above using Package Control. Restart Sublime.
 
 Open `st3/SublimeLinter.sublime-settings` in this folder and copy it into your SublimeLinter user settings located in:
-* OS X: `~/Library/Application Support/Sublime Text 3/SublimeLinter.sublime-settings`.
+* OS X: `~/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings`.
 
 These settings will lint with our coding standard and provide underlining of problematic code. Placing your cursor in non-standard code will show the specific issue in the status bar on the bottom of the window. If you'd prefer a list of errors on save, set `"show_errors_on_save": true`.
 
