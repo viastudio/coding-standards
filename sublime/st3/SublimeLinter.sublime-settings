@@ -21,6 +21,11 @@
                 ],
                 "excludes": [],
                 "standard": "Via"
+            },
+            "jscs": {
+                "@disable": false,
+                "args": [],
+                "excludes": [],
             }
         },
         "show_errors_on_save": false,

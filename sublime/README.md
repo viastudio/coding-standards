@@ -10,6 +10,7 @@ This configures Sublime Text to work with our coding standards and provide real-
 - [SublimeLinter-phpcs](https://github.com/SublimeLinter/SublimeLinter-phpcs)
 - [SublimeLinter-jshint](https://github.com/SublimeLinter/SublimeLinter-jshint)
 - [SublimeLinter-css](https://github.com/SublimeLinter/SublimeLinter-csslint)
+- [SublimeLinter-jscs](https://github.com/SublimeLinter/SublimeLinter-jscs)
 
 ### Sublime Text 2
 - [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter-for-ST2) (no longer supported by devs, recommend using ST3 instead)
@@ -17,7 +18,7 @@ This configures Sublime Text to work with our coding standards and provide real-
 
 ## Installation
 
-**You must have phpcs, jshint, and css installed locally & have set up our coding standard before doing this.**
+**You must have phpcs, jscs, jshint, and css installed locally & have set up our coding standard before doing this.**
 
 If you don't have [Package Control](https://sublime.wbond.net/), install it.
 
