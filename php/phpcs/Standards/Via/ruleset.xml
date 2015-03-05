@@ -11,8 +11,9 @@
   <exclude name="Generic.Formatting.DisallowMultipleStatements"/>
   <exclude name="Zend.Files.ClosingTag"/>
   <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
+  <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
  </rule>
- 
+
  <!-- add-ons -->
  <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed">
   <type>error</type>
@@ -28,10 +29,10 @@
   <properties>
    <property name="ignoreIndentationTokens" type="array" value="T_INLINE_HTML,T_CLOSE_TAG,T_OPEN_TAG"/>
   </properties>
- </rule>  
+ </rule>
  <rule ref="Generic.Metrics.NestingLevel"/>
  <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
- 
+
  <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
  <rule ref="Squiz.Classes.LowercaseClassKeywords"/>
  <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
@@ -47,7 +48,7 @@
  <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
  <rule ref="Snap.WhiteSpace.OperatorSpacing"/>
  <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
- 
+
  <!-- exclude files -->
  <exclude-pattern>*.js</exclude-pattern>
  <exclude-pattern>*/wp-admin/*</exclude-pattern>
