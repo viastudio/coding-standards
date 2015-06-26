@@ -640,6 +640,7 @@ class Via_Sniffs_WhiteSpace_ScopeIndentSniff extends Generic_Sniffs_WhiteSpace_S
             }
 
             // Open tags reset the indent level.
+            // UPDATE: $currentIndent is not changed because of open tags
             if ($tokens[$i]['code'] === T_OPEN_TAG
                 || $tokens[$i]['code'] === T_OPEN_TAG_WITH_ECHO
             ) {
@@ -649,20 +650,20 @@ class Via_Sniffs_WhiteSpace_ScopeIndentSniff extends Generic_Sniffs_WhiteSpace_S
                 }
 
                 if ($checkToken === null) {
-                    $first         = $phpcsFile->findFirstOnLine(T_WHITESPACE, $i, true);
-                    $currentIndent = (strlen($tokens[$first]['content']) - strlen(ltrim($tokens[$first]['content'])));
+                    // $first         = $phpcsFile->findFirstOnLine(T_WHITESPACE, $i, true);
+                    // $currentIndent = (strlen($tokens[$first]['content']) - strlen(ltrim($tokens[$first]['content'])));
                 } else {
-                    $currentIndent = ($tokens[$i]['column'] - 1);
+                    // $currentIndent = ($tokens[$i]['column'] - 1);
                 }
 
                 $lastOpenTag = $i;
 
                 if (isset($adjustments[$i]) === true) {
-                    $currentIndent += $adjustments[$i];
+                    // $currentIndent += $adjustments[$i];
                 }
 
                 // Make sure it is divisible by our expected indent.
-                $currentIndent = (int) (ceil($currentIndent / $this->indent) * $this->indent);
+                // $currentIndent = (int) (ceil($currentIndent / $this->indent) * $this->indent);
 
                 if ($this->_debug === true) {
                     echo "\t=> indent set to $currentIndent".PHP_EOL;
@@ -673,6 +674,7 @@ class Via_Sniffs_WhiteSpace_ScopeIndentSniff extends Generic_Sniffs_WhiteSpace_S
 
             // Close tags reset the indent level, unless they are closing a tag
             // opened on the same line.
+            // UPDATE: $currentIndent is not changed because of close tags
             if ($tokens[$i]['code'] === T_CLOSE_TAG) {
                 if ($this->_debug === true) {
                     $line = $tokens[$i]['line'];
@@ -680,22 +682,22 @@ class Via_Sniffs_WhiteSpace_ScopeIndentSniff extends Generic_Sniffs_WhiteSpace_S
                 }
 
                 if ($tokens[$lastOpenTag]['line'] !== $tokens[$i]['line']) {
-                    $currentIndent = ($tokens[$i]['column'] - 1);
+                    // $currentIndent = ($tokens[$i]['column'] - 1);
                     $lastCloseTag  = $i;
                 } else {
                     if ($lastCloseTag === null) {
                         $currentIndent = 0;
                     } else {
-                        $currentIndent = ($tokens[$lastCloseTag]['column'] - 1);
+                        // $currentIndent = ($tokens[$lastCloseTag]['column'] - 1);
                     }
                 }
 
-                if (isset($adjustments[$i]) === true) {
-                    $currentIndent += $adjustments[$i];
-                }
+                // if (isset($adjustments[$i]) === true) {
+                //     $currentIndent += $adjustments[$i];
+                // }
 
                 // Make sure it is divisible by our expected indent.
-                $currentIndent = (int) (ceil($currentIndent / $this->indent) * $this->indent);
+                // $currentIndent = (int) (ceil($currentIndent / $this->indent) * $this->indent);
 
                 if ($this->_debug === true) {
                     echo "\t=> indent set to $currentIndent".PHP_EOL;
