@@ -10,7 +10,7 @@ This `jscs` standard is loosely based on the Google preset with some VIA Studio 
 # Installation
 
     sudo npm install -g jscs # you must install this globally
-    sudo ln -s /path/to/coding-standards/js/jscs/via.json ~/.jscsrc
+    ln -s /path/to/coding-standards/js/jscs/via.json ~/.jscsrc
 
 # Usage
 
