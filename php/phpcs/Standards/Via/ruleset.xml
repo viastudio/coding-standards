@@ -52,6 +52,7 @@
  <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
 
  <!-- exclude files -->
+ <exclude-pattern>*.svg</exclude-pattern>
  <exclude-pattern>*.js</exclude-pattern>
  <exclude-pattern>*/wp-admin/*</exclude-pattern>
  <exclude-pattern>*/wp-includes/*</exclude-pattern>
