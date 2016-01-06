@@ -53,6 +53,7 @@
 
  <!-- exclude files -->
  <exclude-pattern>*.js</exclude-pattern>
+ <exclude-pattern>*.md</exclude-pattern>
  <exclude-pattern>*/wp-admin/*</exclude-pattern>
  <exclude-pattern>*/wp-includes/*</exclude-pattern>
  <exclude-pattern>*/wp-content/plugins/(?!via-)</exclude-pattern>
