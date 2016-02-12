@@ -47,6 +47,7 @@
     ],
     "requireSpaceBeforeObjectValues": true,
     "requireSpaceBetweenArguments": true,
+    "requireSpaceAfterComma": true,
     "requireLineFeedAtFileEnd": true,
     "requireBlocksOnNewline": true,
     "requireSpacesInFunctionExpression": {
