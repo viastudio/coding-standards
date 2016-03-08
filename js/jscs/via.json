@@ -1,4 +1,5 @@
 {
+    "maxErrors": null,
     "requireCurlyBraces": [
         "if",
         "else",
