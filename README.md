@@ -8,6 +8,7 @@ You can install and configure one or more of the following components.
 
 - [phpcs](php/phpcs)
 - [jshint](js/jshint)
+- [eslint](js/eslint)
 - [jscs](js/jscs)
 - [csslint](css/csslint)
 - [git](git/hooks)
