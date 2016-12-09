@@ -6,17 +6,18 @@ We currently use `PSR-2` as our base ruleset with minor whitespace changes to ma
 
 # Requirements
 
-- [PEAR](http://pear.php.net/manual/en/installation.getting.php)
-- [phpcs](https://github.com/squizlabs/PHP_CodeSniffer) (PEAR Install)
+- [Composer](https://getcomposer.org/download/)
+- [phpcs](https://github.com/squizlabs/PHP_CodeSniffer) (Composer Install)
 
 # Installation
+
+Make sure `export PATH="$PATH:$HOME/.composer/vendor/bin"` has been added to your `.bash_profile` or `.bashrc` file
 
 After installing the PHP CodeSniffer, you can create symlinks to each of the directories under `Standards/`.
 
 You can navigate to the default standards directory with the following commands:
 
-	cd `pear config-get php_dir`
-	cd PHP/CodeSniffer/Standards/
+	cd ~/.composer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards
 
 Within this directory are the default standards installed with PHP CodeSniffer. Add symlinks for *each* of the directories in our `Standards/`. For example:
 
