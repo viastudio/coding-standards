@@ -91,10 +91,6 @@
       2,
       "never"
     ],
-    "comma-dangle": [
-      2,
-      "ignore"
-    ],
     "yoda": [
       2,
       "never"
