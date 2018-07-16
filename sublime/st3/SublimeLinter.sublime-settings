@@ -1,33 +1,62 @@
 {
-    "user": {
-        "linters": {
-            "jshint": {
-                "@disable": false,
-                "args": [],
-                "excludes": [
-                    "*.min.js"
-                ]
-            },
-            "php": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
-            "phpcs": {
-                "@disable": false,
-                "args": [
-                    "-ns",
-                    "--report=full"
-                ],
-                "excludes": [],
-                "standard": "Via"
-            },
-            "jscs": {
-                "@disable": false,
-                "args": [],
-                "excludes": [],
+    "debug": true,
+    "delay": 0.25,
+    "lint_mode": "save",
+    "linters": {
+        "jshint": {
+            "@disable": false,
+            "args": [],
+            "excludes": [],
+            "env": {
+                "PATH": "/usr/local/bin/"
             }
         },
-        "show_errors_on_save": false,
-    }
+        "eslint": {
+            "@disable": false,
+            "args": [],
+            "excludes": [],
+            "env": {
+                "PATH": "/usr/local/bin/"
+            }
+        },
+        "php": {
+            "@disable": false,
+            "args": [],
+            "excludes": []
+        },
+        "phpcs": {
+            "@disable": false,
+            "args": [
+                "-ns",
+                "--report=full"
+            ],
+            "excludes": [],
+            "standard": "Via"
+        },
+        "jscs": {
+            "@disable": false,
+            "args": [],
+            "excludes": [],
+        }
+    },
+    "no_column_highlights_line": false,
+    "paths": {
+        "linux": [],
+        "osx": [
+            "~/.composer/vendor/bin",
+            "/usr/local/bin/"
+        ],
+        "windows": []
+    },
+    "show_marks_in_minimap": true,
+    "syntax_map": {
+        "html (django)": "html",
+        "html (rails)": "html",
+        "html 5": "html",
+        "javascript (babel)": "javascript",
+        "magicpython": "python",
+        "php": "html",
+        "python django": "python",
+        "pythonimproved": "python"
+    },
 }
