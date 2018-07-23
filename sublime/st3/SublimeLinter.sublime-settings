@@ -28,10 +28,10 @@
             "@disable": false,
             "args": [
                 "-ns",
-                "--report=full"
+                "--report=full",
+                "--standard=Via"
             ],
             "excludes": [],
-            "standard": "Via"
         },
         "jscs": {
             "@disable": false,
