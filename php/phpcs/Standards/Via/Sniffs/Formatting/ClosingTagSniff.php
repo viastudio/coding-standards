@@ -9,6 +9,11 @@
  * @link      https://github.com/viastudio/coding-standards
  */
 
+namespace Via\Sniffs\Formatting;
+
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
+
 /**
  * Closing tag is not allowed at end of a file,
  * unless it is an inline PHP block in an HTML file
@@ -16,7 +21,7 @@
  * @author    Jason McCreary <jmac@viastudio.com>
  * @link      https://github.com/viastudio/coding-standards
  */
-class Via_Sniffs_Formatting_ClosingTagSniff implements PHP_CodeSniffer_Sniff
+class ClosingTagSniff implements Sniff
 {
 
 
@@ -35,13 +40,13 @@ class Via_Sniffs_Formatting_ClosingTagSniff implements PHP_CodeSniffer_Sniff
     /**
      * Processes this sniff, when one of its tokens is encountered.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param File $phpcsFile The file being scanned.
      * @param int                  $stackPtr  The position of the current token in
      *                                        the stack passed in $tokens.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 

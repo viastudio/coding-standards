@@ -9,7 +9,15 @@
  * @author    Author Tags Are Dumb <authortagsdumb@richardhoward.net>
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class Snap_Sniffs_WhiteSpace_OperatorSpacingSniff implements PHP_CodeSniffer_Sniff
+
+namespace Snap\Sniffs\Whitespace;
+
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Util\Tokens;
+use PHP_CodeSniffer\Files\File;
+
+
+class OperatorSpacingSniff implements Sniff
 {
 
     /**
@@ -29,10 +37,10 @@ class Snap_Sniffs_WhiteSpace_OperatorSpacingSniff implements PHP_CodeSniffer_Sni
      */
     public function register()
     {
-        $comparison = PHP_CodeSniffer_Tokens::$comparisonTokens;
-        $operators  = PHP_CodeSniffer_Tokens::$operators;
+        $comparison = Tokens::$comparisonTokens;
+        $operators  = Tokens::$operators;
         $operators[] = T_STRING_CONCAT;
-        $assignment = PHP_CodeSniffer_Tokens::$assignmentTokens;
+        $assignment = Tokens::$assignmentTokens;
 
         return array_unique(array_merge($comparison, $operators, $assignment));
 
@@ -48,7 +56,7 @@ class Snap_Sniffs_WhiteSpace_OperatorSpacingSniff implements PHP_CodeSniffer_Sni
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -116,17 +124,17 @@ class Snap_Sniffs_WhiteSpace_OperatorSpacingSniff implements PHP_CodeSniffer_Sni
                 return;
             }
 
-            if (in_array($tokens[$prev]['code'], PHP_CodeSniffer_Tokens::$operators) === true) {
+            if (in_array($tokens[$prev]['code'], Tokens::$operators) === true) {
                 // Just trying to operate on a negative value; eg. ($var * -1).
                 return;
             }
 
-            if (in_array($tokens[$prev]['code'], PHP_CodeSniffer_Tokens::$comparisonTokens) === true) {
+            if (in_array($tokens[$prev]['code'], Tokens::$comparisonTokens) === true) {
                 // Just trying to compare a negative value; eg. ($var === -1).
                 return;
             }
 
-            if (in_array($tokens[$prev]['code'], PHP_CodeSniffer_Tokens::$assignmentTokens) === true) {
+            if (in_array($tokens[$prev]['code'], Tokens::$assignmentTokens) === true) {
                 // Just trying to assign a negative value; eg. ($var = -1).
                 return;
             }
@@ -156,7 +164,7 @@ class Snap_Sniffs_WhiteSpace_OperatorSpacingSniff implements PHP_CodeSniffer_Sni
         // multiple spaces there to align multiple assignments.
         if ($found === 0 || (
             $found > 1
-            && in_array($tokens[$stackPtr]['code'], PHP_CodeSniffer_Tokens::$assignmentTokens) === false
+            && in_array($tokens[$stackPtr]['code'], Tokens::$assignmentTokens) === false
         )) {
             $error = 'Expected 1 space before "%s"; %s found';
             $data  = array(
@@ -186,10 +194,10 @@ class Snap_Sniffs_WhiteSpace_OperatorSpacingSniff implements PHP_CodeSniffer_Sni
      * Check that there is a single space (or line break) immediately before the token.
      *
      * @param array $tokens    The tokens from the file being sniffed.
-     * @param int   $stackPtr  The position of the current token in the stack 
+     * @param int   $stackPtr  The position of the current token in the stack
      *                         passed in $tokens.
      *
-     * @return int  1 if a single space or line break was found, otherwise the 
+     * @return int  1 if a single space or line break was found, otherwise the
      *              number of spaces found.
      */
     private function checkSpaceBefore(array $tokens, $stackPtr)
