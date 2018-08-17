@@ -6,7 +6,14 @@
  * @link      https://github.com/viastudio/coding-standards
  */
 
-class Via_Sniffs_WhiteSpace_ScopeIndentSniff extends Generic_Sniffs_WhiteSpace_ScopeIndentSniff {
+namespace Via\Sniffs\WhiteSpace;
+
+use PHP_CodeSniffer\Standards\Generic\Sniffs\WhiteSpace\ScopeIndentSniff as GenericScopeIndentSniff;
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Util\Tokens;
+use PHP_CodeSniffer\Files\File;
+
+class ScopeIndentSniff extends GenericScopeIndentSniff {
 
     /**
      * The --tab-width CLI value that is being used.
@@ -71,23 +78,22 @@ class Via_Sniffs_WhiteSpace_ScopeIndentSniff extends Generic_Sniffs_WhiteSpace_S
     /**
      * Processes this test, when one of its tokens is encountered.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile All the tokens found in the document.
+     * @param File $phpcsFile All the tokens found in the document.
      * @param int                  $stackPtr  The position of the current token
      *                                        in the stack passed in $tokens.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         if ($this->_tabWidth === null) {
-            $cliValues = $phpcsFile->phpcs->cli->getCommandLineValues();
-            if (isset($cliValues['tabWidth']) === false || $cliValues['tabWidth'] === 0) {
+            if (isset($phpcsFile->config->tabWidth) === false || $phpcsFile->config->tabWidth === 0) {
                 // We have no idea how wide tabs are, so assume 4 spaces for fixing.
                 // It shouldn't really matter because indent checks elsewhere in the
                 // standard should fix things up.
                 $this->_tabWidth = 4;
             } else {
-                $this->_tabWidth = $cliValues['tabWidth'];
+                $this->_tabWidth = $phpcsFile->config->tabWidth;
             }
         }
 
@@ -476,7 +482,7 @@ class Via_Sniffs_WhiteSpace_ScopeIndentSniff extends Generic_Sniffs_WhiteSpace_S
             }//end if
 
             if ($checkToken !== null
-                && isset(PHP_CodeSniffer_Tokens::$scopeOpeners[$tokens[$checkToken]['code']]) === true
+                && isset(Tokens::$scopeOpeners[$tokens[$checkToken]['code']]) === true
                 && in_array($tokens[$checkToken]['code'], $this->nonIndentingScopes) === false
                 && isset($tokens[$checkToken]['scope_opener']) === true
             ) {
@@ -760,7 +766,7 @@ class Via_Sniffs_WhiteSpace_ScopeIndentSniff extends Generic_Sniffs_WhiteSpace_S
                 }
 
                 $condition = $tokens[$tokens[$i]['scope_condition']]['code'];
-                if (isset(PHP_CodeSniffer_Tokens::$scopeOpeners[$condition]) === true
+                if (isset(Tokens::$scopeOpeners[$condition]) === true
                     && in_array($condition, $this->nonIndentingScopes) === false
                 ) {
                     if ($this->_debug === true) {
@@ -875,7 +881,7 @@ class Via_Sniffs_WhiteSpace_ScopeIndentSniff extends Generic_Sniffs_WhiteSpace_S
                         echo "\t* using parenthesis *".PHP_EOL;
                     }
 
-                    $prev      = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($parens - 1), null, true);
+                    $prev      = $phpcsFile->findPrevious(Tokens::$emptyTokens, ($parens - 1), null, true);
                     $object    = 0;
                     $condition = 0;
                 } else if ($object > 0 && $object >= $condition) {
