@@ -8,13 +8,18 @@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 
+namespace Via\Sniffs\ControlStructures;
+
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
+
 /**
  * Verifies that `elseif` is used instead of `else if`.
  *
  * @author    Jason McCreary <jmac@viastudio.com>
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class Via_Sniffs_ControlStructures_ElseIfSniff implements PHP_CodeSniffer_Sniff
+class ElseIfSniff implements Sniff
 {
 
     /**
@@ -32,13 +37,13 @@ class Via_Sniffs_ControlStructures_ElseIfSniff implements PHP_CodeSniffer_Sniff
     /**
      * Processes this test, when one of its tokens is encountered.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param File $phpcsFile The file being scanned.
      * @param int                  $stackPtr  The position of the current token in the
      *                                        stack passed in $tokens.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
 
       $tokens = $phpcsFile->getTokens();

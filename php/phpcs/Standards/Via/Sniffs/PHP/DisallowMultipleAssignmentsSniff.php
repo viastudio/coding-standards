@@ -8,11 +8,11 @@
  * @link      https://github.com/viastudio/coding-standards
  */
 
-if (class_exists('Squiz_Sniffs_PHP_DisallowMultipleAssignmentsSniff', true) === false) {
-    $error = 'Class Squiz_Sniffs_PHP_DisallowMultipleAssignmentsSniff not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
+namespace Via\Sniffs\PHP;
 
+use PHP_CodeSniffer\Standards\Squiz\Sniffs\PHP\DisallowMultipleAssignmentsSniff as SquizDisallowMultipleAssignmentsSniff;
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
 
 /**
  * Via_Sniffs_PHP_DisallowMultipleAssignmentsSniff.
@@ -20,7 +20,7 @@ if (class_exists('Squiz_Sniffs_PHP_DisallowMultipleAssignmentsSniff', true) === 
  * @author    Joel Jacob <joel@viastudio.com>
  * @link      https://github.com/viastudio/coding-standards
  */
-class Via_Sniffs_PHP_DisallowMultipleAssignmentsSniff extends Squiz_Sniffs_PHP_DisallowMultipleAssignmentsSniff {
+class DisallowMultipleAssignmentsSniff extends SquizDisallowMultipleAssignmentsSniff {
 
 
     /**
@@ -37,13 +37,13 @@ class Via_Sniffs_PHP_DisallowMultipleAssignmentsSniff extends Squiz_Sniffs_PHP_D
     /**
      * Processes this test, when one of its tokens is encountered.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param File $phpcsFile The file being scanned.
      * @param int                  $stackPtr  The position of the current token in the
      *                                        stack passed in $tokens.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr) {
+    public function process(File $phpcsFile, $stackPtr) {
         $tokens = $phpcsFile->getTokens();
 
         // Ignore assignments in control structures.

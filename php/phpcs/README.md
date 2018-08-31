@@ -17,7 +17,7 @@ After installing the PHP CodeSniffer, you can create symlinks to each of the dir
 
 You can navigate to the default standards directory with the following commands:
 
-	cd ~/.composer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards
+	cd ~/.composer/vendor/squizlabs/php_codesniffer/src/Standards
 
 Within this directory are the default standards installed with PHP CodeSniffer. Add symlinks for *each* of the directories in our `Standards/`. For example:
 
