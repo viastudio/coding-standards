@@ -4,4 +4,4 @@
 
 # Installation
     sudo npm install -g prettier
-    ln -s /path/to/coding-standards/js/prettier/prettier.json ~/.prettier.json
+    ln -s /path/to/coding-standards/js/prettier/prettier.json ~/.prettierrc.json
