@@ -6,6 +6,10 @@
             "jsx": true
         }
     },
+    "plugins": [
+        "jsx-a11y",
+        "react-hooks"
+    ],
     "extends": [
         "eslint:recommended"
     ],
@@ -13,9 +17,10 @@
         "no-prototype-builtins": [
             0
         ],
-        "no-unused-vars":[
-            1,
-            "all"
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "no-unused-vars": [
+            1
         ],
         "curly": [
             2,
