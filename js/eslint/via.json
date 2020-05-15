@@ -17,30 +17,15 @@
             "jsx": true
         }
     },
-    "plugins": [
-        "jsx-a11y",
-        "react-hooks"
-    ],
-    "extends": [
-        "eslint:recommended"
-    ],
+    "plugins": ["jsx-a11y", "react-hooks"],
+    "extends": ["eslint:recommended"],
     "rules": {
-        "no-prototype-builtins": [
-            0
-        ],
+        "no-prototype-builtins": [0],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
-        "no-unused-vars": [
-            1
-        ],
-        "curly": [
-            2,
-            "all"
-        ],
-        "operator-linebreak": [
-            2,
-            "after"
-        ],
+        "no-unused-vars": [1],
+        "curly": [2, "all"],
+        "operator-linebreak": [2, "after"],
         "indent": [
             2,
             4,
@@ -59,10 +44,7 @@
                 "overrides": {}
             }
         ],
-        "one-var": [
-            2,
-            "never"
-        ],
+        "one-var": [2, "never"],
         "brace-style": [
             2,
             "1tbs",
@@ -86,15 +68,9 @@
                 }
             }
         ],
-        "padded-blocks": [
-            2,
-            "never"
-        ],
+        "padded-blocks": [2, "never"],
         "space-infix-ops": 2,
-        "space-before-blocks": [
-            2,
-            "always"
-        ],
+        "space-before-blocks": [2, "always"],
         "key-spacing": [
             2,
             {
@@ -115,19 +91,9 @@
                 "named": "never"
             }
         ],
-        "array-bracket-spacing": [
-            2,
-            "never",
-            {}
-        ],
-        "space-in-parens": [
-            2,
-            "never"
-        ],
-        "yoda": [
-            2,
-            "never"
-        ],
+        "array-bracket-spacing": [2, "never", {}],
+        "space-in-parens": [2, "never"],
+        "yoda": [2, "never"],
         "no-empty": [
             2,
             {
