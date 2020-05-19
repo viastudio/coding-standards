@@ -3,5 +3,15 @@
     "jsxSingleQuote": true,
     "trailingComma": "es5",
     "tabWidth": 4,
-    "plugins": ["/opt/prettier/plugin-php"]
+    "overrides": [
+        {
+            "files": "*.php",
+            "options": {
+                "phpVersion": "7.3",
+                "singleQuote": true,
+                "trailingCommaPHP": true,
+                "braceStyle": "1tbs"
+            }
+        }
+    ]
 }
