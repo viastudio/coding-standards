@@ -2,5 +2,16 @@
     "singleQuote": true,
     "jsxSingleQuote": true,
     "trailingComma": "es5",
-    "tabWidth": 4
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "*.php",
+            "options": {
+                "phpVersion": "7.3",
+                "singleQuote": true,
+                "trailingCommaPHP": true,
+                "braceStyle": "1tbs"
+            }
+        }
+    ]
 }
