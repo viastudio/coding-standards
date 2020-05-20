@@ -14,6 +14,7 @@
   <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
   <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
   <exclude name="Squiz.Classes.ValidClassName.NotCamelCaps" />
+  <exclude name="Generic.WhiteSpace.DisallowTabIndent" />
  </rule>
 
  <!-- add-ons -->
