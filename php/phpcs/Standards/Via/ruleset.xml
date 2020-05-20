@@ -52,6 +52,7 @@
  <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
 
  <!-- exclude files -->
+ <exclude-pattern>*/vendor/*</exclude-pattern>
  <exclude-pattern>*.svg</exclude-pattern>
  <exclude-pattern>*.js</exclude-pattern>
  <exclude-pattern>*.md</exclude-pattern>
